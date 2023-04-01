@@ -6,28 +6,24 @@ import (
 )
 
 func Exec() {
+	for _, item := range config.RemoteBeforeCmd {
+		run(item)
+	}
+	Upload()
+	for _, item := range config.RemoteAfterCmd {
+		run(item)
+	}
+}
+
+func run(shell string) {
 	session, err := GetSession()
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer session.Close()
-	for _, item := range config.RemoteBeforeCmd {
-		buf, err := session.CombinedOutput(item)
-		if err != nil {
-			log.Fatalln(err.Error())
-		}
-		log.Println(string(buf))
-		session.Stdout = nil
-		session.Stderr = nil
+	buf, err := session.CombinedOutput(shell)
+	if err != nil {
+		log.Fatalln(err.Error())
 	}
-	Upload()
-	for _, item := range config.RemoteAfterCmd {
-		buf, err := session.CombinedOutput(item)
-		if err != nil {
-			log.Fatalln(err.Error())
-		}
-		log.Println(string(buf))
-		session.Stdout = nil
-		session.Stderr = nil
-	}
+	log.Println(string(buf))
 }

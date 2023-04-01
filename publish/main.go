@@ -8,6 +8,7 @@ import (
 
 func main() {
 	config.Init()
+	remote.Init()
 	local.Exec()
 	remote.Exec()
 }

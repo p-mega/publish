@@ -33,7 +33,7 @@ func Upload() {
 		log.Fatal(err)
 	}
 	defer dstFile.Close()
-	buf := make([]byte, 1024)
+	buf := make([]byte, 10*1024*1024)
 	for {
 		n, _ := srcFile.Read(buf)
 		if n == 0 {

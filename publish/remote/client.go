@@ -30,7 +30,7 @@ func GetSession() (*ssh.Session, error) {
 	return session, nil
 }
 
-func init() {
+func Init() {
 	var (
 		auth         []ssh.AuthMethod
 		addr         string
