@@ -12,7 +12,7 @@ import (
 
 var sshClient *ssh.Client
 
-func getSftpClient() (*sftp.Client, error) {
+func GetSftpClient() (*sftp.Client, error) {
 	var sftpClient *sftp.Client
 	var err error
 	if sftpClient, err = sftp.NewClient(sshClient); err != nil {
@@ -21,7 +21,7 @@ func getSftpClient() (*sftp.Client, error) {
 	return sftpClient, nil
 }
 
-func getSession() (*ssh.Session, error) {
+func GetSession() (*ssh.Session, error) {
 	var session *ssh.Session
 	var err error
 	if session, err = sshClient.NewSession(); err != nil {

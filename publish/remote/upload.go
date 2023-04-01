@@ -10,12 +10,12 @@ import (
 	"github.com/pkg/sftp"
 )
 
-func upload() {
+func Upload() {
 	var (
 		err        error
 		sftpClient *sftp.Client
 	)
-	sftpClient, err = getSftpClient()
+	sftpClient, err = GetSftpClient()
 	if err != nil {
 		log.Fatal(err)
 	}
