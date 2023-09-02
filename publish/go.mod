@@ -1,4 +1,4 @@
-module publish
+module github.com/p-mega/publish
 
 go 1.19
 
