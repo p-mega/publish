@@ -3,8 +3,9 @@ package remote
 import (
 	"fmt"
 	"log"
-	"publish/config"
 	"strconv"
+
+	"github.com/p-mega/publish/config"
 )
 
 func Exec() {

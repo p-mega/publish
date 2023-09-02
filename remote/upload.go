@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 	"path"
-	"publish/config"
+
+	"github.com/p-mega/publish/config"
 
 	"github.com/pkg/sftp"
 )

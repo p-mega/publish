@@ -5,8 +5,9 @@ import (
 	"io"
 	"log"
 	"os/exec"
-	"publish/config"
 	"runtime"
+
+	"github.com/p-mega/publish/config"
 )
 
 func Exec() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"publish/config"
+	"github.com/p-mega/publish/config"
 
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
